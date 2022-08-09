@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+<title>Design KangDO</title>
+<style type="text/css">
+	@font-face {
+         font-family: "Font Nunito";
+         src: url('Nunito-Black.ttf');
+         }
+ 	.nunito {
+         font-family: "Font Nunito";
+         }
+@font-face {
+         font-family: "Font Insaninu";
+         src: url('Insanibu.ttf');
+         }
+ 	.insanibu {
+         font-family: "Font Insanibu";
+         }
+	@font-face {
+         font-family: "Font Airstrike";
+         src: url('Airstrike.ttf');
+         }
+ 
+  	 .airstrike {
+         font-family: "Font Airstrike";
+         }
+	.gradient1 {
+	background-image: linear-gradient(to right, rgba(0.255.0.0), rgba(0.255.0.255), rgba(0.255.0.0)));
+	}
+	.gradient2 {
+	background-image: linear-gradient(to right, rgba(0.200.0.0), rgba(0.200.0.255), rgba(0.200.0.0)));
+	}
+	#gradient3 {
+	  background-image: linear-gradient(to right, #4682B4, #00FFFF, #00FA9A);
+	}
+	body {
+   background-image: url("grey.jpg");
+   background-repeat: no-repeat;
+   background-size:cover
+	}
+hr {
+  border: 0;
+  height: 5px;
+  background: -moz-linear-gradient(left, rgba(0, 255, 0, 0) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 255, 0, 0) 100%);
+  background: -webkit-linear-gradient(left, rgba(0, 255, 0, 0) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 255, 0, 0) 100%);
+  background: linear-gradient(to right, rgba(0, 150, 0, 30) 30%, rgba(0, 255, 0, 255) 100%, rgba(0, 150, 0, 30) 30%);
+  /*  Old CSS gradients */
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff', GradientType=2);
+}
+.padding {
+        border: 1px solid #000;
+        padding: 10px 10px 10px 10px;
+    }
+
+</style>
+</head>
+
+<audio hidden autoplay loop>
+    <source src="berlayartakbertepian.mp3" type="audio/mpeg">
+    Update browsermu untuk menikmati musik di web.
+</audio>
+
+
+
+
+
+</body>
+</html>
