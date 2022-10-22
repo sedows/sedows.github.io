@@ -9,7 +9,7 @@
 #menu {background:#333;color:#eee;height: 80px;border-bottom: 5px solid #ddd;width:100%;max-width:960px;margin:0 auto;}
 #menu ul,#menu li{margin:0 0;padding:0 0;list-style:none}
 #menu ul{height:80px}
-#menu li{float:left;display:inline;position:relative;font:bold 12px Arial;text-shadow: 0 -1px 0 #000;border-right: 1px solid #444;border-left: 1px solid #111;text-transform:uppercase}
+#menu li{float:left;display:inline;position:fixed;font:bold 12px Arial;text-shadow: 0 -1px 0 #000;border-right: 1px solid #444;border-left: 1px solid #111;text-transform:uppercase}
 #menu li:first-child{border-left: none}
 #menu a{display:block;line-height:80px;padding:0 14px;text-decoration:none;color:#eee;}
 #menu li:hover > a,#menu li a:hover{background:#c00}
@@ -93,51 +93,28 @@ hr {
 </style>
 
 
+</head>
+
+
 <nav id='menu'>
 <input type='checkbox'/>
 <label>&#8801;<span>Navigation</span></label>
 <ul>
-<li><a class='home' expr:href='data:blog.homepageUrl'>Home</a></li>
-<li><a href='#' title='Template'>Template</a></li>
-<li><a href='#' title='Tips SEO'>Tips SEO</a></li>
-<li><a href='#' title='Google AdSense'>Google AdSense</a></li>
-<li><a href='http://www.contohblog.com' target='_blank' title='CB'>Link</a></li>
-<li><a class='prett' href='#'>Dropmenu</a>
+<li><a class='home' expr:href='data:blog.homepageUrl'>Tentang KangDO</a></li>
+<li><a href='#' title='Template'>Area operasional</a></li>
+<li><a href='#' title='Tips SEO'>Data tarif</a></li>
+<li><a href='#' title='Google AdSense'>Tips</a></li>
+<li><a href='#' title='cb'>Etc</a></li>
+<li><a class='prett' href='#'>Kurir</a>
 <ul class='menus'>
-<li><a href='#' title='CSS'>CSS</a></li>
- <li><a href='#' title='HTML'>HTML</a></li>
- <li><a href='#' title='Javascript'>Javascript</a></li>
- <li><a href='#' title='Google'>Google</a></li>
+<li><a href='#' title='CSS'>1</a></li>
+ <li><a href='#' title='HTML'>2</a></li>
+ <li><a href='#' title='Javascript'>3</a></li>
+ <li><a href='#' title='Google'>4</a></li>
 </ul>
 </li>
        </ul>
     </nav>
-
-
-<script type='text/javascript'>
-//<![CDATA[
-$(document).ready(function() {
-    var stickyNavTop = $('#menu').offset().top;
-    var stickyNav = function(){
-        var scrollTop = $(window).scrollTop();
-        if (scrollTop > stickyNavTop) {
-            $('#menu').css({ 'position': 'fixed', 'top':0, 'z-index':9999 });
-        } else {
-            $('#menu').css({ 'position': 'relative' });
-        }
-    };
-    stickyNav();
-    $(window).scroll(function() {
-        stickyNav();
-    });
-});
-//]]>
-</script>
-
-
-</head>
-
-
 
 
 
@@ -231,6 +208,26 @@ $(document).ready(function() {
 
 </center>
 
+
+<script type='text/javascript'>
+//<![CDATA[
+$(document).ready(function() {
+    var stickyNavTop = $('#menu').offset().top;
+    var stickyNav = function(){
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop > stickyNavTop) {
+            $('#menu').css({ 'position': 'fixed', 'top':0, 'z-index':9999 });
+        } else {
+            $('#menu').css({ 'position': 'relative' });
+        }
+    };
+    stickyNav();
+    $(window).scroll(function() {
+        stickyNav();
+    });
+});
+//]]>
+</script>
 
 </body>
 </html>
