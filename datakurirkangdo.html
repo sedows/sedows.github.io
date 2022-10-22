@@ -12,14 +12,14 @@
 #menu li{float:left;display:inline;position:relative;font:bold 18px Arial;text-shadow: 0 -1px 0 #000;border-right: 1px solid #444;border-left: 1px solid #111;text-transform:uppercase}
 #menu li:first-child{border-left: none}
 #menu a{display:block;line-height:80px;padding:0 28px;text-decoration:none;color:#eee;}
-#menu li:hover > a,#menu li a:hover{background:#c00}
+#menu li:hover > a,#menu li a:hover{background:#0f1}
 #menu input{display:none;margin:0 0;padding:0 0;width:80px;height:40px;opacity:0;cursor:pointer}
 #menu label{font:bold 30px Arial;display:none;width:35px;height:36px;line-height:36px;text-align:center}
 #menu label span{font-size:12px;position:absolute;left:40px}
 #menu ul.menus{height:auto;overflow:hidden;width:180px;background:#c00;position:absolute;z-index:99;display:none;border:0;}
 #menu ul.menus li{display:block;width:100%;font:12px Arial;text-transform:none;}
 #menu li:hover ul.menus{display:block}
-#menu a.home {background-color:#c00;}
+#menu a.home {background-color:#333;}
 #menu a.prett{padding:0 27px 0 14px}
 #menu a.prett::after{content:"";width:0;height:0;border-width:6px 5px;border-style:solid;border-color:#eee transparent transparent transparent;position:fixed;top:15px;right:9px}
 #menu ul.menus a:hover{background:#48d;}
@@ -35,9 +35,6 @@
 }
 
 </style>
-
-
-
 
 
 <style type="text/css">
@@ -102,16 +99,17 @@ hr {
 <label>&#8801;<span>Navigation</span></label>
 <ul>
 <li><a class='home' expr:href='data:blog.homepageUrl'>Tentang KangDO</a></li>
-<li><a href='#' title='Template'>Area operasional</a></li>
-<li><a href='#' title='Tips SEO'>Data tarif</a></li>
-<li><a href='#' title='Google AdSense'>Tips</a></li>
-<li><a href='#' title='cb'>Etc</a></li>
-<li><a class='prett' href='#'>Kurir</a>
+<li><a href='#' title='area'>Area operasional</a></li>
+<li><a href='#' title='tarif'>Data tarif</a></li>
+<li><a href='#' title='mitra'>Data mitra</a></li>
+<li><a class='prett' href='#'>Driver</a>
 <ul class='menus'>
-<li><a href='#' title='CSS'>1</a></li>
- <li><a href='#' title='HTML'>2</a></li>
- <li><a href='#' title='Javascript'>3</a></li>
- <li><a href='#' title='Google'>4</a></li>
+<li><a href='#' title='1'>Argo wukir samudra</a></li>
+ <li><a href='#' title='2'>Khodiroh</a></li>
+ <li><a href='#' title='3'>Septian pamungkas</a></li>
+ <li><a href='#' title='4'>Yohana putra</a></li>
+ <li><a href='#' title='5'>Aguh asep waroyo</a></li>
+ <li><a href='#' title='6'>Fiqih dzulfika</a></li>
 </ul>
 </li>
        </ul>
@@ -212,6 +210,24 @@ hr {
 </br>
 
 </center>
+
+
+<body onload=display_ct();>
+<span id='ct' ></span>
+
+
+<script type="text/javascript"> 
+function display_c(){
+var refresh=1000; // Refresh rate in milli seconds
+mytime=setTimeout('display_ct()',refresh)
+}
+
+function display_ct() {
+var x = new Date()
+document.getElementById('ct').innerHTML = x;
+display_c();
+ }
+</script>
 
 
 <script type='text/javascript'>
