@@ -5,93 +5,36 @@
 <title>Data kurir KangDO</title>
 
 
-	<style type="text/css">
-	html,body{
-		padding: 0;
-		margin:0;
-		font-family: sans-serif;
-	}
- 
-	.menu-malasngoding{
-		background-color: #00ff00;
-	}
- 
-	.menu-malasngoding ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
-	}
- 
-	.menu-malasngoding > ul > li {
-		float: left;
-	}
- 
-	
-	.menu-malasngoding li a {
-		display: inline-block;
-		color: black;
-		text-align: center;
-		padding: 50px 30px;
-		text-decoration: none;
-	}
- 
-	.menu-malasngoding li a:hover{
-		background-color: #2525ff;
-	}
- 
-	li.dropdown {
-		display: inline-block;
-	}
- 
-	.dropdown:hover .isi-dropdown {
-		display: block;
-	}
- 
-	.isi-dropdown a:hover {
-		color: #000 !important;
-	}
- 
-	.isi-dropdown {
-		position: absolute;
-		display: none;
-		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		z-index: 1;
-		background-color: #00ff00;
-	}
- 
-	.isi-dropdown a {
-		color: #000000 !important;
-	}
- 
-	.isi-dropdown a:hover {
-		color: #000000 !important;
-		background: #f3f3f3 !important;
-	}
+<style>
+#menu {background:#333;color:#eee;height: 40px;border-bottom: 5px solid #ddd;width:100%;max-width:960px;margin:0 auto;}
+#menu ul,#menu li{margin:0 0;padding:0 0;list-style:none}
+#menu ul{height:40px}
+#menu li{float:left;display:inline;position:relative;font:bold 12px Arial;text-shadow: 0 -1px 0 #000;border-right: 1px solid #444;border-left: 1px solid #111;text-transform:uppercase}
+#menu li:first-child{border-left: none}
+#menu a{display:block;line-height:40px;padding:0 14px;text-decoration:none;color:#eee;}
+#menu li:hover > a,#menu li a:hover{background:#c00}
+#menu input{display:none;margin:0 0;padding:0 0;width:80px;height:40px;opacity:0;cursor:pointer}
+#menu label{font:bold 30px Arial;display:none;width:35px;height:36px;line-height:36px;text-align:center}
+#menu label span{font-size:12px;position:absolute;left:40px}
+#menu ul.menus{height:auto;overflow:hidden;width:180px;background:#c00;position:absolute;z-index:99;display:none;border:0;}
+#menu ul.menus li{display:block;width:100%;font:12px Arial;text-transform:none;}
+#menu li:hover ul.menus{display:block}
+#menu a.home {background-color:#c00;}
+#menu a.prett{padding:0 27px 0 14px}
+#menu a.prett::after{content:"";width:0;height:0;border-width:6px 5px;border-style:solid;border-color:#eee transparent transparent transparent;position:absolute;top:15px;right:9px}
+#menu ul.menus a:hover{background:#48d;}
+@media screen and (max-width: 768px){
+  #menu{position:relative}
+  #menu ul{background:#111;position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none}
+  #menu ul.menus{width:100%;position:static;padding-left:20px}
+  #menu li{display:block;float:none;width:auto}
+  #menu input,#menu label{position:absolute;top:0;left:0;display:block}
+  #menu input{z-index:4}
+  #menu input:checked + label{color:white}
+  #menu input:checked ~ ul{display:block}
+}
 </style>
- 
- 
-<center>
-<header class="header">
-	<div class="menu-malasngoding">
- 
-		<ul>
-			<li><a href="#">Tentang KangDO</a></li>
-			<li><a href="#">Database Tarif</a></li>
-			<li><a href="#">Database Area Operasional</a></li>
-			<li class="dropdown"><a href="#">Data Kurir</a>
-				<ul class="isi-dropdown">
-					<li><a href="#">Kurir 1</a></li>
-					<li><a href="#">Kurir 2</a></li>
-					<li><a href="#">Kurir 3</a></li>
-					<li><a href="#">Kurir 4</a></li>
-				</ul>
-			</li>
-		</ul>
- 
-	</div>
-</header>
-</center>
+
 
 
 
@@ -149,6 +92,31 @@ hr {
 
 </style>
 </head>
+
+
+
+<nav id='menu'>
+<input type='checkbox'/>
+<label>&#8801;<span>Navigation</span></label>
+<ul>
+<li><a class='home' expr:href='data:blog.homepageUrl'>Home</a></li>
+<li><a href='#' title='Template'>Template</a></li>
+<li><a href='#' title='Tips SEO'>Tips SEO</a></li>
+<li><a href='#' title='Google AdSense'>Google AdSense</a></li>
+<li><a href='http://www.contohblog.com' target='_blank' title='CB'>Link</a></li>
+<li><a class='prett' href='#'>Dropmenu</a>
+<ul class='menus'>
+<li><a href='#' title='CSS'>CSS</a></li>
+ <li><a href='#' title='HTML'>HTML</a></li>
+ <li><a href='#' title='Javascript'>Javascript</a></li>
+ <li><a href='#' title='Google'>Google</a></li>
+</ul>
+</li>
+       </ul>
+    </nav>
+
+
+
 
 </br>
 <center>
@@ -240,18 +208,16 @@ hr {
 
 </center>
 
-
-
 <script type='text/javascript'>
 //<![CDATA[
 $(document).ready(function() {
-    var stickyNavTop = $(class: 'menu-malasngoding').offset().top;
+    var stickyNavTop = $('#menu').offset().top;
     var stickyNav = function(){
         var scrollTop = $(window).scrollTop();
         if (scrollTop > stickyNavTop) {
-            $(class: 'menu-malasngoding').css({ 'position': 'fixed', 'top':0, 'z-index':9999 });
+            $('#menu').css({ 'position': 'fixed', 'top':0, 'z-index':9999 });
         } else {
-            $(class: 'menu-malasngoding').css({ 'position': 'relative' });
+            $('#menu').css({ 'position': 'relative' });
         }
     };
     stickyNav();
@@ -261,6 +227,7 @@ $(document).ready(function() {
 });
 //]]>
 </script>
+
 
 </body>
 </html>
