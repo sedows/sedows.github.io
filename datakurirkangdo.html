@@ -15,8 +15,8 @@
 #menu li:hover > a,#menu li a:hover{background:#c00}
 #menu input{display:none;margin:0 0;padding:0 0;width:1500px;height:80px;opacity:0;cursor:pointer}
 #menu label{font:bold 30px Arial;display:none;width:35px;height:36px;line-height:36px;text-align:center}
-#menu label span{font-size:12px;position:absolute;left:40px}
-#menu ul.menus{height:auto;overflow:hidden;width:180px;background:#c00;position:absolute;z-index:99;display:none;border:0;}
+#menu label span{font-size:12px;position:fixed;left:40px}
+#menu ul.menus{height:auto;overflow:hidden;width:180px;background:#c00;fixed:absolute;z-index:99;display:none;border:0;}
 #menu ul.menus li{display:block;width:100%;font:12px Arial;text-transform:none;}
 #menu li:hover ul.menus{display:block}
 #menu a.home {background-color:#c00;}
@@ -25,10 +25,10 @@
 #menu ul.menus a:hover{background:#48d;}
 @media screen and (max-width: 768px){
   #menu{position:fixed}
-  #menu ul{background:#111;position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none}
-  #menu ul.menus{width:100%;position:static;padding-left:20px}
+  #menu ul{background:#111;position:fixed;top:100%;right:0;left:0;z-index:3;height:auto;display:none}
+  #menu ul.menus{width:100%;position:fixed;padding-left:20px}
   #menu li{display:block;float:none;width:auto}
-  #menu input,#menu label{position:absolute;top:0;left:0;display:block}
+  #menu input,#menu label{position:fixed;top:0;left:0;display:block}
   #menu input{z-index:4}
   #menu input:checked + label{color:white}
   #menu input:checked ~ ul{display:block}
