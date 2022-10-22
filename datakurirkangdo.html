@@ -245,13 +245,13 @@ hr {
 <script type='text/javascript'>
 //<![CDATA[
 $(document).ready(function() {
-    var stickyNavTop = $('#menu-malasngoding').offset().top;
+    var stickyNavTop = $('menu-malasngoding').offset().top;
     var stickyNav = function(){
         var scrollTop = $(window).scrollTop();
         if (scrollTop > stickyNavTop) {
-            $('#menu-malasngoding').css({ 'position': 'fixed', 'top':0, 'z-index':9999 });
+            $('menu-malasngoding').css({ 'position': 'fixed', 'top':0, 'z-index':9999 });
         } else {
-            $('#menu-malasngoding').css({ 'position': 'relative' });
+            $('menu-malasngoding').css({ 'position': 'relative' });
         }
     };
     stickyNav();
