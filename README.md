@@ -1,1 +1,1 @@
-# sedows.github.io
+# www.kangdo.xyz
