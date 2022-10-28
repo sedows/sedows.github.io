@@ -98,31 +98,6 @@ hr {
 </head>
 
 
-<!-- NAVIGASI FIXED -->
-
-<nav id='menu'>
-<input type='checkbox'/>
-<label>&#8801;<span>Navigation</span></label>
-<ul>
-<li><a class='home' expr:href='data:blog.homepageUrl'>Tentang KangDO</a></li>
-<li><a href='404page.html' title='area'>Area operasional</a></li>
-<li><a href='404page.html' title='tarif'>Data tarif</a></li>
-<li><a href='404page.html' title='mitra'>Data mitra</a></li>
-<li><a class='prett' href='#'>Driver</a>
-<ul class='menus'>
-<li><a href='404page.html' title='1'>Argo wukir samudra</a></li>
- <li><a href='404page.html' title='2'>Khodiroh</a></li>
- <li><a href='404page.html' title='3'>Septian pamungkas</a></li>
- <li><a href='404page.html' title='4'>Yohana putra</a></li>
- <li><a href='404page.html' title='5'>Aguh asep waroyo</a></li>
- <li><a href='404page.html' title='6'>Fiqih dzulfika</a></li>
-</ul>
-</li>
-       </ul>
-    </nav>
-
-<!-- END NAVIGASI -->
-
 </br>
 </br>
 </br>
@@ -222,58 +197,11 @@ hr {
 </br>
 
 
-<img src="pic.png" style="width:300px;height:300px;">
-</br>
-<h5 class="nunito" align="center"><font color="white">Nama : Fiqih</b></h5>
-<h5 class="nunito" align="center"><font color="red">Belum mendaftar ulang</b></h5>
-<a href="https://drive.google.com/drive/folders/1-u5RJp5Ndui3EYgBMnE-zSbSCDc0fKRV"><img src="cekpendapatan.png" alt="Cek pendapatan.png" style="width:250px;height:50px;"></a>
-</br>
-</br>
-</br>
-
 </center>
 
 <!-- END DRIVER LIST -->
 
 
-
-<!-- JS AREA -->
-
-
-<script type='text/javascript'>
-//<![CDATA[
-$(document).ready(function() {
-    var stickyNavTop = $('#menu').offset().top;
-    var stickyNav = function(){
-        var scrollTop = $(window).scrollTop();
-        if (scrollTop > stickyNavTop) {
-            $('#menu').css({ 'position': 'fixed', 'top':0, 'z-index':9999 });
-        } else {
-            $('#menu').css({ 'position': 'relative' });
-        }
-    };
-    stickyNav();
-    $(window).scroll(function() {
-        stickyNav();
-    });
-});
-//]]>
-
-function display_c(){
-var refresh=1000; // Refresh rate in milli seconds
-mytime=setTimeout('display_ct()',refresh)
-}
-
-function display_ct() {
-var x = new Date()
-document.getElementById('ct').innerHTML = x;
-display_c();
- }
-
-
-</script>
-
-<!-- END fuck JS AREA -->
 
 </body>
 </html>
