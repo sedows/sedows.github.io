@@ -12,6 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
+    <link rel="stylesheet" href="https://www.infoayamgepreksai.store/framework/loading-bar.css">
 </head>
 <body>
     <audio id="sound1">
@@ -53,11 +56,11 @@
         </style>
         <style>
             p,h1,h2,h3,h4,h5,h6{margin:0;}
-        body{background-color:#f2fdf2;color:#0e510e;font-family:rubik;font-weight:100;}
+        body{color:#0e510e;font-family:rubik;font-weight:100;background-color:rgba(255, 255, 255, 0.919);background: url(https://www.infoayamgepreksai.store/img/pattern2.png);background-size:contain;}
         .header-bg{background:linear-gradient(to right, #178217, #52e052, #178217);padding:0;height:450px;z-index:97;}
         .txt-sdw{text-shadow: 0 0 3px azure;}
         .header-img{background:url(./bg);background-size:cover;object-fit:cover;display:flex;justify-content:space-between;height:350px;flex-direction:column;align-items:center;}
-        .main-bg{background-color:rgb(225, 244, 225);}
+        .main-bg{background-color:rgb(239, 248, 239);}
         .main-c{color:rgb(11, 50, 11);}
         .sec-c{color:rgb(45, 56, 45);}
         .col{display:flex;flex-direction:column;justify-content:center;align-items:center;}
@@ -82,7 +85,66 @@
         .index2{width:0;height:300px;transition:0.6s ease;background-color:azure;position:fixed;top:20%;left:0;bottom:0;z-index:100;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;margin:0;box-shadow:0 0 20px grey;border-radius:0 40px 40px 0;}
         .index a{text-decoration:none;color:inherit;}
         .index2 a{text-decoration:none;color:inherit;}
+        .rad{border-radius:15px;}
         </style>
+        <!-- Modal -->
+    <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background-color:azure;">
+        <div class="modal-dialog"style="height:100%;margin:0;border:none;">
+        <div class="modal-content" style="height:100%;margin:0;border-radius:0;border:none;">
+            <div class="modal-header" style="background:linear-gradient(to right,#7de87d,#3bd73b);border-radius:0;box-shadow:0 5px 7px grey;border:none;justify-content:start;position:fixed;top:0;left:0;right:0;z-index:2;">
+            <span class="bi-envelope-check" style="font-size:25px"></span>
+            <span class="modal-title fs-5 big" id="staticBackdropLabel" style="margin-left:10px;">Proposal <span class="medium">Fun Cooking</span></span>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="modal-body" style="display:flex;justify-content:center;flex-direction:column;align-items:center;background-color:inherit;">
+                <img src="https://www.infoayamgepreksai.store/img/logosai.png" width="100px">
+            <br>
+            <span class="bi-info-circle" style="font-size:15px"></span>
+            <h6 class="little" style="font-size:13px">Silahkan mengisi <strong class="medium">daftar tamu</strong> ( optional ), atau</h6>
+            <h6 class="little" style="font-size:13px">Silahkan klik tombol buka untuk melanjutkan.</h6>
+            <br>
+                <form style="font-size:14px;">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label medium">Nama</label>
+                        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Bu Rara / Pak Bagus" style="font-size:11px;">
+                      </div>
+                      <div class="mb-3">
+                        <label for="asal instansi" class="form-label medium">Asal Instansi</label>
+                        <br>
+                        <select style="border:none;background-color:#b9edb9;color:darkgreen;padding:5px 10px;border-radius:5px;">
+                            <option value="No choice">Pilih :</option>
+                            <option value="TK">TK</option>
+                            <option value="RA">RA</option>
+                            <option value="PAUD">PAUD</option>
+                            <option value="SD">SD</option>
+                            <option value="Umum">Umum</option>
+                        </select>
+                        <br><br>
+                        <input type="name2" class="form-control" id="exampleFormControlInput2" placeholder="TK Pertiwi Tunjung, Jatilawang" style="font-size:11px">
+                      </div>
+                      <div class="mb-3">
+                        <label for="nomor-wa" class="form-label medium">Kontak</label>
+                        <input type="number" class="form-control" placeholder="Whatsapp ( optional )" style="font-size:11px;">
+                        <input type="email" class="form-control" placeholder="Email ( optional )" style="font-size:11px;margin-top:5px;">
+                      </div>
+                      <div class="col">
+                        <input type="button submit" value="Buka Proposal" data-bs-dismiss="modal" onclick="playAudio()" style="border:none;background-color:#7ce87c;color:darkgreen;border-radius:5px;padding:5px 10px;margin:auto;text-align:center;">
+                      </div>
+                </form>
+                <br>
+                <br>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+        <script type="text/javascript">
+            $(window).on('load', function() {
+                $('#myModal').modal('show');
+            });
+        </script>
     <div class="container-fluid header-bg">
         <div class="header-img" width="100%" height="350px"> <!--1stbg-->
             <img src="https://www.infoayamgepreksai.store/img/head.png" height="300px">
@@ -104,21 +166,21 @@
     </div>
     <div class="index">
             <span style="margin-left:10px" class="bi4 bi-house-check-fill"></span>
-            <a style="margin-left:10px" href="#">Outlet</a>
+            <a style="margin-left:10px" href="#outlet">Outlet</a>
             <span style="margin-left:10px" class="bi4 bi-list-check"></span>
-            <a style="margin-left:10px" href="#">Pilihan Menu</a>
+            <a style="margin-left:10px" href="#daftarmenu">Pilihan Menu</a>
             <span style="margin-left:10px" class="bi4 bi-telephone-inbound-fill"></span>
-            <a style="margin-left:10px" href="#">Hubungi Kami</a>
+            <a style="margin-left:10px" href="https://wa.me/6282394945695">Hubungi Kami</a>
             <br>
             <span style="margin-left:10px" class="bi2 bi-arrow-bar-right" id="close"></span>
     </div>
     <div class="index2">
         <span style="margin-right:10px" class="bi4 bi-hdd-rack-fill"></span>
-        <a style="margin-right:10px" href="#">Cloud Storage</a>
+        <a style="margin-right:10px" href="https://drive.google.com/drive/folders/1R9j4bBNCemLa88tWt38h3ZBqqTswPKCS?usp=sharing" target="_blank">Cloud Storage</a>
         <span style="margin-right:10px" class="bi4 bi-youtube"></span>
-        <a style="margin-right:10px" href="#">Youtube</a>
+        <a style="margin-right:10px" href="https://www.youtube.com/@ayamgepreksaiwangon2616/videos" target="_blank">Youtube</a>
         <span style="margin-right:10px" class="bi4 bi-wechat"></span>
-        <a style="margin-right:10px" href="#">Sosial media</a>
+        <a style="margin-right:10px" href="https://www.instagram.com/ayamgepreksai" target="_blank">Sosial media</a>
         <br>
         <span style="margin-right:10px" class="bi2 bi-arrow-bar-left" id="close2"></span>
     </div>
@@ -126,10 +188,12 @@
     <div class="container-fluid">
         <div class="col text-center">
             <div class="card no-bg" style="width: 18rem;">
-                <img src="https://www.infoayamgepreksai.store/img/iceb.png" alt="Gambar icebreaking">
+                    <img src="https://www.infoayamgepreksai.store/img/iceb.png" alt="Gambar icebreaking">
                 <div class="card-body">
-                    <h3 class="rubik big">LET'S HAVE FUN</h3>
-                    <p class="card-text rubik little">Kegiatan ice breaking untuk memecahkan suasana supaya kegiatan belajar lebih berkesan dan asyik</p>
+                    <div style="display:flex;flex-direction:row;justify-content:start;align-items:flex-end;">
+                        <h3 class="rubik big">ICE <h5 class="rubik medium" style="margin-left:5px;"> BREAKING</h5></h3>
+                    </div>
+                    <p class="rubik little" style="text-align:left;font-size:14px;">Memecahkan suasana dengan aneka permainan dan seru - seruan bareng tim dari Ayam Geprek Sa'i bikin acaramu makin berkesan.</p>
                 </div>
             </div>
         </div>
@@ -140,8 +204,10 @@
             <div class="card no-bg" style="width: 18rem;">
                 <img src="https://www.infoayamgepreksai.store/img/cook.png" alt="Gambar funcooking">
                 <div class="card-body">
-                    <h3 class="rubik big">LET'S LEARN</h3>
-                    <p class="card-text">Belajar praktek bagi si kecil akan melatih konsentrasi dalam pembelajaran di sekolah</p>
+                    <div style="display:flex;flex-direction:row;justify-content:start;align-items:flex-end;">
+                        <h3 class="rubik big">COOK <h5 class="rubik medium"> ING</h5></h3>
+                    </div>
+                    <p class="rubik little" style="text-align:left;font-size:14px;">Melihat, mendengar dan praktek. Akan melatih anak lebih aktif dan responsif dalam pembelajaran.</p>
                 </div>
             </div>
         </div>
@@ -152,8 +218,10 @@
             <div class="card no-bg" style="width: 18rem;">
                 <img src="https://www.infoayamgepreksai.store/img/color.png" alt="Gambar mewarnai">
                 <div class="card-body">
-                    <h3 class="rubik big">LET'S COLOURING</h3>
-                    <p class="card-text">Kami menyediakan lomba mewarnai untuk peserta fun cooking supaya acaramu lebih berkesan</p>
+                    <div style="display:flex;flex-direction:row;justify-content:start;align-items:flex-end;">
+                        <h3 class="rubik big">LOMBA<h5 class="rubik medium" style="margin-left:5px;">MEWARNAI</h5></h3>
+                    </div>
+                    <p class="rubik little" style="text-align:left;font-size:14px;">Kami menyelenggarakan lomba mewarnai untuk menambah pengalaman bagi anak.</p>
                 </div>
             </div>
         </div>
@@ -164,8 +232,10 @@
             <div class="card no-bg" style="width: 18rem;">
                 <img src="https://www.infoayamgepreksai.store/img/sertifikat.png" alt="Gambar piala">
                 <div class="card-body">
-                    <h3 class="rubik big">LET'S PRIDE</h3>
-                    <p class="card-text">Dapatkan piala dan sertifikat Fun Cooking dari Ayam Geprek Sa'i</p>
+                    <div style="display:flex;flex-direction:row;justify-content:start;align-items:flex-end;">
+                        <h3 class="rubik big">SERTIFIKAT <h5 class="rubik medium" style="margin-left:5px;"> & PIALA</h5></h3>
+                    </div>
+                    <p class="rubik little" style="text-align:left;font-size:14px;">Dapatkan sertifikat untuk tiap peserta dan piala untuk terbaik 1, 2 dan 3 dari lomba mewarnai.</p>
                 </div>
             </div>
         </div>
@@ -188,11 +258,11 @@
             from {box-shadow:0 0 0 lime;}
             to {box-shadow:0 0 20px lime;}
         }
-        .mtop{margin-top:10px;margin-bottom:10px;}
+        .mtop{margin:25px 0;}
 
     </style>
 
-    <div class="main-bg rounded-100 padding-1 text-center row-1 mtop">
+    <div class="main-bg rounded-100 padding-1 text-center row-1 mtop" id="outlet">
         <div>
             <button class="nextprev" onclick="plusDivsA(-1)">&#10094;</button>
         </div>
@@ -202,29 +272,27 @@
         <br>
         <!---->
         <div class="slide-bms">
-            <img src="#" width="300px" height="300px">
+            <div class="mapouter rad" style='margin-bottom:15px'><div class="gmap_canvas rad"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src="https://maps.google.com/maps?width=300&amp;height=250&amp;hl=en&amp;q=ayam geprek sa'i wangon&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://mcpedls.com/">Minecraft Download</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:250px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:250px;}.gmap_iframe {height:250px!important;}</style></div>
             <div class="row-1">
-                <span class="margin-1 btn">AGS Wangon</span>
-                <span class="margin-1 btn">Lokasi <span class="bi bi-geo-alt-fill"></span></span>
+                <span class="margin-1 btn">Ayam Geprek Sa'i Wangon</span>
             </div>
             <h6 class="big">Jl. Raya Timur Wangon,</h6><h6 class="little">No. 13, Kecamatan Wangon</h6>
             <div class="row-1">
-                <a href="#"><span class="bi3 bi-whatsapp"></span></a>
-                <a href="#"><span class="bi3 bi-instagram"></span></a>
+                <a target='_blank' href='https://wa.me/6282125614003'><span class="bi3 bi-whatsapp"></span></a>
+                <a target='_blank' href='https://www.instagram.com/ayamgepreksai.wangon'><span class="bi3 bi-instagram"></span></a>
             </div>
         </div>
         <!---->
         <!---->
         <div class="slide-bms">
-            <img src="#" width="300px" height="300px">
+            <div class="mapouter rad" style='margin-bottom:15px'><div class="gmap_canvas rad"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src="https://maps.google.com/maps?width=300&amp;height=250&amp;hl=en&amp;q=ayam geprek sa'i ajibarang&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://mcpedls.com/">Minecraft Download</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:250px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:250px;}.gmap_iframe {height:250px!important;}</style></div>
             <div class="row-1">
-                <span class="margin-1 btn">AGS Ajibarang</span>
-                <span class="margin-1 btn">Lokasi <span class="bi bi-geo-alt-fill"></span></span>
+                <span class="margin-1 btn">Ayam Geprek Sa'i Ajibarang</span>
             </div>
             <h6 class="big">Jl. Raya Ajibarang,</h6><h6 class="little">Kecamatan Ajibarang</h6>
             <div class="row-1">
-                <a href="#"><span class="bi3 bi-whatsapp"></span></a>
-                <a href="#"><span class="bi3 bi-instagram"></span></a>
+                <a target='_blank' href='https://wa.me/6281215861286'><span class="bi3 bi-whatsapp"></span></a>
+                <a target='_blank' href='https://www.instagram.com/agsajibarang'><span class="bi3 bi-instagram"></span></a>
             </div>
         </div>
         <!---->
@@ -244,54 +312,50 @@
         <br>
         <!---->
         <div class="slide-clcp">
-            <img src="#" width="300px" height="300px">
+            <div class="mapouter rad" style='margin-bottom:15px'><div class="gmap_canvas rad"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=300&amp;height=250&amp;hl=en&amp;q=ayam geprek sa'i kroya&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://mcpedls.com/">Minecraft Download</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:250px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:250px;}.gmap_iframe {height:250px!important;}</style></div>
             <div class="row-1">
-                <span class="margin-1 btn">AGS Kroya</span>
-                <span class="margin-1 btn">Lokasi <span class="bi bi-geo-alt-fill"></span></span>
+                <span class="margin-1 btn">Ayam Geprek Sa'i Kroya</span>
             </div>
             <h6 class="big">Jl. Bhayangkara,</h6><h6 class="little">Kecamatan Kroya</h6>
             <div class="row-1">
-                <a href="#"><span class="bi3 bi-whatsapp"></span></a>
-                <a href="#"><span class="bi3 bi-instagram"></span></a>
+                <a target='_blank' href='https://wa.me/6282136767306'><span class="bi3 bi-whatsapp"></span></a>
+                <a target='_blank' href='https://www.instagram.com/ayamgepreksai.kroya'><span class="bi3 bi-instagram"></span></a>
             </div>
         </div>
         <!---->
         <!---->
         <div class="slide-clcp">
-            <img src="#" width="300px" height="300px">
+            <div class="mapouter rad" style='margin-bottom:15px'><div class="gmap_canvas rad"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=300&amp;height=250&amp;hl=en&amp;q=ayam geprek sai adipala&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://mcpedls.com/">Minecraft Download</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:250px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:250px;}.gmap_iframe {height:250px!important;}</style></div>
             <div class="row-1">
-                <span class="margin-1 btn">AGS Adipala</span>
-                <span class="margin-1 btn">Lokasi <span class="bi bi-geo-alt-fill"></span></span>
+                <span class="margin-1 btn">Ayam Geprek Sa'i Adipala</span>
             </div>
             <h6 class="big">Jl. Ahmad Yani,</h6><h6 class="little">Kecamatan Adipala</h6>
             <div class="row-1">
-                <a href="#"><span class="bi3 bi-whatsapp"></span></a>
-                <a href="#"><span class="bi3 bi-instagram"></span></a>
+                <a target='_blank' href='https://wa.me/6281225296925'><span class="bi3 bi-whatsapp"></span></a>
+                <a target='_blank' href='https://www.instagram.com/ayamgepreksai.adipala'><span class="bi3 bi-instagram"></span></a>
             </div>
         </div>
         <div class="slide-clcp">
-            <img src="#" width="300px" height="300px">
+            <div class="mapouter rad" style='margin-bottom:15px'><div class="gmap_canvas rad"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=300&amp;height=250&amp;hl=en&amp;q=ayam geprek sa'i sidareja&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://mcpedls.com/">Minecraft Download</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:250px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:250px;}.gmap_iframe {height:250px!important;}</style></div>
             <div class="row-1">
-                <span class="margin-1 btn">AGS Sidareja</span>
-                <span class="margin-1 btn">Lokasi <span class="bi bi-geo-alt-fill"></span></span>
+                <span class="margin-1 btn">Ayam Geprek Sa'i Sidareja</span>
             </div>
             <h6 class="big">Jl. Jenderal Sudirman,</h6><h6 class="little">Kecamatan Sidareja</h6>
             <div class="row-1">
-                <a href="#"><span class="bi3 bi-whatsapp"></span></a>
-                <a href="#"><span class="bi3 bi-instagram"></span></a>
+                <a target='_blank' href='https://wa.me/6281225296901'><span class="bi3 bi-whatsapp"></span></a>
+                <a target='_blank' href='https://www.instagram.com/ayamgepreksai_sidareja'><span class="bi3 bi-instagram"></span></a>
             </div>
         </div>
         <!---->
         <div class="slide-clcp">
-            <img src="#" width="300px" height="300px">
+            <div class="mapouter rad" style='margin-bottom:15px'><div class="gmap_canvas rad"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=300&amp;height=250&amp;hl=en&amp;q=ayam geprek sa'i majenang&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://mcpedls.com/">Minecraft Download</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:250px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:250px;}.gmap_iframe {height:250px!important;}</style></div>
             <div class="row-1">
-                <span class="margin-1 btn">AGS Majenang</span>
-                <span class="margin-1 btn">Lokasi <span class="bi bi-geo-alt-fill"></span></span>
+                <span class="margin-1 btn">Ayam Geprek Sa'i Majenang</span>
             </div>
             <h6 class="big">Jl. Diponegoro,</h6><h6 class="little">Kecamatan Majenang</h6>
             <div class="row-1">
-                <a href="#"><span class="bi3 bi-whatsapp"></span></a>
-                <a href="#"><span class="bi3 bi-instagram"></span></a>
+                <a target='_blank' href='https://wa.me/6281390350831'><span class="bi3 bi-whatsapp"></span></a>
+                <a target='_blank' href='https://www.instagram.com/ayamgepreksai.majenang'><span class="bi3 bi-instagram"></span></a>
             </div>
         </div>
     </div>
@@ -310,15 +374,14 @@
         <br>
         <!---->
         <div class="slide-brebes">
-            <img src="#" width="300px" height="300px">
+            <div class="mapouter rad" style='margin-bottom:15px'><div class="gmap_canvas rad"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src="https://maps.google.com/maps?width=300&amp;height=250&amp;hl=en&amp;q=ayam geprek sa'i bumiayu&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://mcpedls.com/">Minecraft Download</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:250px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:250px;}.gmap_iframe {height:250px!important;}</style></div>
             <div class="row-1">
-                <span class="margin-1 btn">AGS Bumiayu</span>
-                <span class="margin-1 btn">Lokasi <span class="bi bi-geo-alt-fill"></span></span>
+                <span class="margin-1 btn">Ayam Geprek Sa'i Bumiayu</span>
             </div>
             <h6 class="big">Jl. Pangeran Diponegoro,</h6><h6 class="little">Kecamatan Bumiayu</h6>
             <div class="row-1">
-                <a href="#"><span class="bi3 bi-whatsapp"></span></a>
-                <a href="#"><span class="bi3 bi-instagram"></span></a>
+                <a target='_blank' href='https://wa.me/6281225039007'><span class="bi3 bi-whatsapp"></span></a>
+                <a target='_blank' href='https://www.instagram.com/ayamgepreksai_bumiayu'><span class="bi3 bi-instagram"></span></a>
             </div>
         </div>
         <!---->
@@ -338,28 +401,26 @@
         <br>
         <!---->
         <div class="slide-tgl">
-            <img src="#" width="300px" height="300px">
+            <div class="mapouter rad" style='margin-bottom:15px'><div class="gmap_canvas rad"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src="https://maps.google.com/maps?width=300&amp;height=250&amp;hl=en&amp;q=geprek sai margasari&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://mcpedls.com/">Minecraft Download</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:250px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:250px;}.gmap_iframe {height:250px!important;}</style></div>
             <div class="row-1">
-                <span class="margin-1 btn">AGS Margasari</span>
-                <span class="margin-1 btn">Lokasi <span class="bi bi-geo-alt-fill"></span></span>
+                <span class="margin-1 btn">Ayam Geprek Sa'i Margasari</span>
             </div>
             <h6 class="big">Jl. Raya Margasari,</h6><h6 class="little">Kecamatan Margasari</h6>
             <div class="row-1">
-                <a href="#"><span class="bi3 bi-whatsapp"></span></a>
-                <a href="#"><span class="bi3 bi-instagram"></span></a>
+                <a target='_blank' href='https://wa.me/6282136420750'><span class="bi3 bi-whatsapp"></span></a>
+                <a target='_blank' href='https://www.instagram.com/ayam_geprek_sai_margasari'><span class="bi3 bi-instagram"></span></a>
             </div>
         </div>
         <!---->
         <div class="slide-tgl">
-            <img src="#" width="300px" height="300px">
+            <div class="mapouter rad" style='margin-bottom:15px'><div class="gmap_canvas rad"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src="https://maps.google.com/maps?width=300&amp;height=250&amp;hl=en&amp;q=ayam geprek sai lebaksiu&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://mcpedls.com/">Minecraft Download</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:250px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:250px;}.gmap_iframe {height:250px!important;}</style></div>
             <div class="row-1">
-                <span class="margin-1 btn">AGS Lebaksiu</span>
-                <span class="margin-1 btn">Lokasi <span class="bi bi-geo-alt-fill"></span></span>
+                <span class="margin-1 btn">Ayam Geprek Sa'i Lebaksiu</span>
             </div>
             <h6 class="big">Jl. Raya Lebaksiu-Slawi No. 17,</h6><h6 class="little">Kecamatan Lebaksiu</h6>
             <div class="row-1">
-                <a href="#"><span class="bi3 bi-whatsapp"></span></a>
-                <a href="#"><span class="bi3 bi-instagram"></span></a>
+                <a href="target='_blank' href='https://wa.me/6281226632042'"><span class="bi3 bi-whatsapp"></span></a>
+                <a target='_blank' href='https://www.instagram.com/ayamgepreksai_lebaksiu'><span class="bi3 bi-instagram"></span></a>
             </div>
         </div>
         <!---->
@@ -379,29 +440,27 @@
         <br>
         <!---->
         <div class="slide-pbg">
-            <img src="#" width="300px" height="300px">
+            <div class="mapouter rad" style='margin-bottom:15px'><div class="gmap_canvas rad"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src="https://maps.google.com/maps?width=300&amp;height=250&amp;hl=en&amp;q=ayam geprek sa'i purbalingga&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://mcpedls.com/">Minecraft Download</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:250px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:250px;}.gmap_iframe {height:250px!important;}</style></div>
             <div class="row-1">
-                <span class="margin-1 btn">AGS Purbalingga</span>
-                <span class="margin-1 btn">Lokasi <span class="bi bi-geo-alt-fill"></span></span>
+                <span class="margin-1 btn">Ayam Geprek Sa'i Purbalingga</span>
             </div>
             <h6 class="big">Jl. AW Sumarmo No. 46,</h6><h6 class="little">Kecamatan Purbalingga</h6>
             <div class="row-1">
-                <a href="#"><span class="bi3 bi-whatsapp"></span></a>
-                <a href="#"><span class="bi3 bi-instagram"></span></a>
+                <a target='_blank' href='https://wa.me/6285229710006'><span class="bi3 bi-whatsapp"></span></a>
+                <a target='_blank' href='https://www.instagram.com/ayamgepreksai_purbalingga'><span class="bi3 bi-instagram"></span></a>
             </div>
         </div>
         <!---->
         <!---->
         <div class="slide-pbg">
-            <img src="#" width="300px" height="300px">
+            <div class="mapouter rad" style='margin-bottom:15px'><div class="gmap_canvas rad"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src="https://maps.google.com/maps?width=300&amp;height=250&amp;hl=en&amp;q=ayam geprek sa'i bobotsari&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://mcpedls.com/">Minecraft Download</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:250px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:250px;}.gmap_iframe {height:250px!important;}</style></div>
             <div class="row-1">
-                <span class="margin-1 btn">AGS Bobotsari</span>
-                <span class="margin-1 btn">Lokasi <span class="bi bi-geo-alt-fill"></span></span>
+                <span class="margin-1 btn">Ayam Geprek Sa'i Bobotsari</span>
             </div>
             <h6 class="big">Jl. Kolonel Sugiri No. 38,</h6><h6 class="little">Kecamatan Bobotsari</h6>
             <div class="row-1">
-                <a href="#"><span class="bi3 bi-whatsapp"></span></a>
-                <a href="#"><span class="bi3 bi-instagram"></span></a>
+                <a target='_blank' href='https://wa.me/6281326492191'><span class="bi3 bi-whatsapp"></span></a>
+                <a target='_blank' href='https://www.instagram.com/ayamgepreksai.bobotsarii'><span class="bi3 bi-instagram"></span></a>
             </div>
         </div>
         <!---->
@@ -412,196 +471,138 @@
     </div>
     <br>
     <br>
-    <div class="text-center">
+    <div class="text-center" id="daftarmenu">
         <h1 class="menulist rubik big">Pilihan</h1>
     </div>
     <style>
-        .table{display:flex;justify-content:center;align-items:center;flex-direction:column;margin:0;width:100%;}
-        .th{background:linear-gradient(to right, #136c13, #228422);color:azure;border-radius:5px;box-shadow:0 3px 5px grey;margin:6px;padding:6px;display:flex;justify-content:space-between;flex-direction:column;align-items:center;}
+        .table{display:flex;justify-content:center;align-items:center;flex-direction:column;margin:0;width:100%;background:linear-gradient(to right, #136c13c9, #228422d9);}
+        .table2{display:flex;justify-content:center;align-items:center;flex-direction:column;margin:0;width:100%;background:linear-gradient(to right, #1c781cd9, #2d872dd5);}
+        .table3{display:flex;justify-content:center;align-items:center;flex-direction:column;margin:0;width:100%;background:linear-gradient(to right, #2c822cdc, #3d8d3dd3);}
+        .table4{display:flex;justify-content:center;align-items:center;flex-direction:column;margin:0;width:100%;background:linear-gradient(to right, #388b38d5, #4b994bd2);}
+        .th{color:azure;border-radius:5px;;margin:20px auto;padding:6px;display:flex;justify-content:center;flex-direction:column;align-items:center;max-width:70%;text-align:center;}
         .title{width:100%;}
         .content{width:100%;height:100%;margin:3px;border-radius:5px;}
-        .price{background-color:rgb(140, 237, 140);color:#043004;padding:3px 7px;border-radius:6px;font-weight:200;}
+        .price{background-color:rgb(140, 237, 140);color:#043004;padding:3px 7px;border-radius:6px;font-weight:200;margin:10px;}
+        .pricing1{margin-top:-20px;}
+        .pricing{margin-top:20px;}
     </style>
     <br>
     <div class="table text-center">
-        <div class="row-1">
+        <div class="col">
             <div class="th">
-                <div class="title">
-                    <h4>Fun Cooking 1</h4>
-                </div>
                 <div class="content">
-                    <img src="#" width="100%" height="100%">
+                    <img src="https://linkundangan.xyz/ags/images/nasisayap.png" width="200px">
                 </div>
-                <div class="pricing">
-                    <span class="price">Rp. 17.000;-</span>
+                <div class="pricing1">
+                    <span class="price">Rp. 12.000;-</span>
+                    <h5 style="margin-top:5px;">Fun Cooking 1</h5>
+                    <h6 style="font-size:14px;margin-top:5px;">Paket memasak Fried Chicken Sayap. Free (Nasi + Es Teh) untuk makan bersama. Doorprize di sela-sela acara.</h6>
                 </div>
             </div>
             <div class="th">
-                <div class="title">
-                    <h4>Fun Cooking 1</h4>
-                </div>
                 <div class="content">
-                    <img src="#" width="100%" height="100%">
+                    <img src="https://linkundangan.xyz/ags/images/nasipaha.png" width="200px">
                 </div>
-                <div class="pricing">
-                    <span class="price">Rp. 17.000;-</span>
+                <div class="pricing1">
+                    <span class="price">Rp. 15.000;-</span>
+                    <h5 style="margin-top:5px;">Fun Cooking 2</h5>
+                    <h6 style="font-size:14px;margin-top:5px;">Paket memasak Fried Chicken Paha Bawah. Free (Nasi + Es Teh) untuk makan bersama. Doorprize di sela-sela acara.</h6>
                 </div>
             </div>
         </div>
     </div>
-    <div class="table text-center">
-        <div class="row-1">
+    <div class="table2 text-center">
+        <div class="col">
             <div class="th">
-                <div class="title">
-                    <h4>Fun Cooking 1</h4>
-                </div>
                 <div class="content">
-                    <img src="#" width="100%" height="100%">
+                    <img src="https://linkundangan.xyz/ags/images/nasisayapsertifikat.png" width="200px">
                 </div>
                 <div class="pricing">
-                    <span class="price">Rp. 17.000;-</span>
+                    <span class="price">Rp. 15.000;-</span>
+                    <h5 style="margin-top:5px;">Fun Cooking 1 Extra</h5>
+                    <h6 style="font-size:14px;margin-top:5px;">Paket memasak Fried Chicken Sayap. Free (Nasi + Es Teh) untuk makan bersama. Doorprize di sela-sela acara, Sertifikat cetak.</h6>
                 </div>
             </div>
             <div class="th">
-                <div class="title">
-                    <h4>Fun Cooking 1</h4>
-                </div>
                 <div class="content">
-                    <img src="#" width="100%" height="100%">
+                    <img src="https://linkundangan.xyz/ags/images/nasipahasertifikat.png" width="200px">
                 </div>
                 <div class="pricing">
-                    <span class="price">Rp. 17.000;-</span>
+                    <span class="price">Rp. 18.000;-</span>
+                    <h5 style="margin-top:5px;">Fun Cooking 2 Extra</h5>
+                    <h6 style="font-size:14px;margin-top:5px;">Paket memasak Fried Chicken Paha Bawah. Free (Nasi + Es Teh) untuk makan bersama. Doorprize di sela-sela acara Sertifikat cetak.</h6>
                 </div>
             </div>
         </div>
     </div>
-    <div class="table text-center">
-        <div class="row-1">
+    <div class="table3 text-center">
+        <div class="col">
             <div class="th">
-                <div class="title">
-                    <h4>Fun Cooking 1</h4>
-                </div>
                 <div class="content">
-                    <img src="#" width="100%" height="100%">
+                    <img src="https://linkundangan.xyz/ags/images/nasisayapsertifikatcb.png" width="200px">
                 </div>
                 <div class="pricing">
                     <span class="price">Rp. 17.000;-</span>
+                    <h5 style="margin-top:5px;">Fun Cooking 1 Cashback</h5>
+                    <h6 style="font-size:14px;margin-top:5px;">Paket memasak Fried Chicken Sayap. Free (Nasi + Es Teh) untuk makan bersama. Doorprize di sela-sela acara, Serifikat cetak. Rp. 2000,- × Jumlah siswa cash back untuk dewan Guru.</h6>
                 </div>
             </div>
             <div class="th">
-                <div class="title">
-                    <h4>Fun Cooking 1</h4>
-                </div>
                 <div class="content">
-                    <img src="#" width="100%" height="100%">
+                    <img src="https://linkundangan.xyz/ags/images/nasisayapsertifikatcb.png" width="200px">
                 </div>
                 <div class="pricing">
-                    <span class="price">Rp. 17.000;-</span>
+                    <span class="price">Rp. 20.000;-</span>
+                    <h5 style="margin-top:5px;">Fun Cooking 2 Cashback</h5>
+                    <h6 style="font-size:14px;margin-top:5px;">Paket memasak Fried Chicken Paha Bawah. Free (Nasi + Es Teh) untuk makan bersama. Doorprize di sela-sela acara Sertifikat cetak. Rp. 2000,- × Jumlah siswa cash back untuk dewan guru.</h6>
                 </div>
             </div>
         </div>
     </div>
-    <div class="table text-center">
-        <div class="row-1">
+    <div class="table4 text-center">
+        <div class="col">
             <div class="th">
-                <div class="title">
-                    <h4>Fun Cooking 1</h4>
-                </div>
                 <div class="content">
-                    <img src="#" width="100%" height="100%">
+                    <img src="https://linkundangan.xyz/ags/images/nasipahapiala.png" width="200px">
                 </div>
                 <div class="pricing">
-                    <span class="price">Rp. 17.000;-</span>
+                    <span class="price">Rp. 25.000;-</span>
+                    <h5 style="margin-top:5px;">Fun Cooking 1 Lomba Mewarnai</h5>
+                    <h6 style="font-size:14px;margin-top:5px;">Lomba Mewarnai Piala Juara 1-2-3. Paket memasak Fried Chicken Paha Bawah. Free (Nasi + Es Teh) untuk makan bersama. Doorprize di sela-sela acara. Minimal 15 peserta.</h6>
                 </div>
             </div>
             <div class="th">
-                <div class="title">
-                    <h4>Fun Cooking 1</h4>
-                </div>
                 <div class="content">
-                    <img src="#" width="100%" height="100%">
+                    <img src="https://linkundangan.xyz/ags/images/nasipialasertifikat.png" width="200px">
                 </div>
                 <div class="pricing">
-                    <span class="price">Rp. 17.000;-</span>
+                    <span class="price">Rp. 28.000;-</span>
+                    <h5 style="margin-top:5px;">Fun Cooking 2 Lomba Mewarnai</h5>
+                    <h6 style="font-size:14px;margin-top:5px;">Lomba Mewarnai Piala Juara 1-2-3. Paket memasak Fried Chicken Paha Bawah. Free (Nasi + Es Teh) untuk makan bersama. Doorprize di sela-sela acara. Sertifikat Cetak. Minimal 15 peserta.</h6>
                 </div>
             </div>
             <div class="th">
-                <div class="title">
-                    <h4>Fun Cooking 1</h4>
-                </div>
                 <div class="content">
-                    <img src="#" width="100%" height="100%">
+                    <img src="https://linkundangan.xyz/ags/images/nasipialasertifikatcb.png" width="200px">
                 </div>
                 <div class="pricing">
-                    <span class="price">Rp. 17.000;-</span>
+                    <span class="price">Rp. 30.000;-</span>
+                    <h5 style="margin-top:5px;">Fun Cooking 3 Lomba Mewarnai</h5>
+                    <h6 style="font-size:14px;margin-top:5px;">Lomba Mewarnai Piala Juara 1-2-3. Paket memasak Fried Chicken Paha Bawah. Free (Nasi + Es Teh) untuk makan bersama. Doorprize di sela-sela acara. Sertifikat cetak. Rp. 2000,- x Jumlah siswa cash back untk dewan guru. Minimal 15 peserta.</h6>
                 </div>
             </div>
         </div>
     </div>
     <br>
     <br>
+    <div style="display:flex;flex-direction:column;justify-content:center;">
+        <iframe style="margin:auto;border-radius:50px;box-shadow:0 0 15px gray;" src="https://whatsform.com/YRfkyE"  width="400px" height="1395px" frameBorder="0"></iframe>
+        <div style="background-color:white;width:380px;height:50px;position:relative;z-index:2;margin-top:-90px;margin-left:auto;margin-right:auto;"></div>
+    </div>
     <br>
     <br>
     <br>
     
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background-color:azure;">
-        <div class="modal-dialog"style="height:100%;margin:0;border:none;">
-        <div class="modal-content" style="height:100%;margin:0;border-radius:0;border:none;">
-            <div class="modal-header" style="background:linear-gradient(to right,#7de87d,#3bd73b);border-radius:0;box-shadow:0 5px 7px grey;border:none;justify-content:start;position:fixed;top:0;left:0;right:0;z-index:2;">
-            <span class="bi-envelope-check" style="font-size:25px"></span>
-            <span class="modal-title fs-5 big" id="staticBackdropLabel" style="margin-left:10px;">Proposal <span class="medium">Fun Cooking</span></span>
-            </div>
-            <br>
-            <br>
-            <br>
-            <div class="modal-body" style="display:flex;justify-content:center;flex-direction:column;align-items:center;background-color:inherit;">
-                <img src="https://www.infoayamgepreksai.store/img/logosai.png" width="100px">
-            <br>
-            <span class="bi-info-circle" style="font-size:15px"></span>
-            <h6 class="little" style="font-size:13px">Silahkan mengisi <strong class="medium">daftar tamu</strong> ( optional ), atau</h6>
-            <h6 class="little" style="font-size:13px">Silahkan klik tombol buka untuk melanjutkan.</h6>
-            <br>
-                <form style="font-size:14px;">
-                    <div class="mb-3">
-                        <label for="nama" class="form-label big">Nama anda</label>
-                        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Bu Putri / Pak Indra" style="font-size:11px;">
-                      </div>
-                      <div class="mb-3">
-                        <label for="asal instansi" class="form-label big">Asal Instansi</label>
-                        <br>
-                        <select style="border:none;background-color:#b9edb9;color:darkgreen;padding:5px 10px;border-radius:5px;">
-                            <option value="No choice">Pilih :</option>
-                            <option value="TK">TK</option>
-                            <option value="RA">RA</option>
-                            <option value="PAUD">PAUD</option>
-                            <option value="SD">SD</option>
-                            <option value="Umum">Umum</option>
-                        </select>
-                        <br><br>
-                        <input type="name2" class="form-control" id="exampleFormControlInput2" placeholder="TK Pertiwi Tunjung, Jatilawang" style="font-size:11px">
-                      </div>
-                      <div class="mb-3">
-                        <label for="nomor-wa" class="form-label big">Kontak</label>
-                        <input type="number" class="form-control" placeholder="Whatsapp ( optional )" style="font-size:11px;">
-                        <input type="email" class="form-control" placeholder="Email ( optional )" style="font-size:11px;margin-top:5px;">
-                      </div>
-                      <div class="col">
-                        <input type="button submit" value="Buka Proposal" data-bs-dismiss="modal" onclick="playAudio()" style="border:none;background-color:#7ce87c;color:darkgreen;border-radius:5px;padding:5px 10px;margin:auto;text-align:center;">
-                      </div>
-                </form>
-                <br>
-                <br>
-            </div>
-            
-        </div>
-        </div>
-    </div>
-        <script type="text/javascript">
-            $(window).on('load', function() {
-                $('#myModal').modal('show');
-            });
-        </script>
 
 
     <script> //slide-bms
@@ -733,11 +734,11 @@
         .ci{margin:2px;}
         .is-playing{margin-top:0;border:none;background-color:rgb(232, 245, 232);color:darkgreen;}
         .pausedo{margin-top:0;border:none;background-color:rgb(226, 242, 226);color:darkgreen;}
-        .side-panel{height:140px;width:50px;position:fixed;top:72%;right:0;background-color:azure;border-radius:30px 0 0 30px;box-shadow:0 0 10px grey;display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;}
+        .side-panel{height:140px;width:50px;position:fixed;top:72%;right:0;background-color:azure;border-radius:30px 0 0 30px;box-shadow:0 0 10px grey;display:flex;justify-content:center;align-items:center;text-align:center;flex-direction:column;z-index:2;}
     </style>
 
     <!--Button nav-->
-    <audio id="testAudio" hidden src="https://api.twilio.com/cowbell.mp3" type="audio/mpeg">
+    <audio id="testAudio" hidden src="https://www.infoayamgepreksai.store/img/quin.mp3" type="audio/mpeg">
     </audio>
 
     <div class="side-panel">
@@ -774,15 +775,35 @@
         x.pause();
         }
     </script>
+    <script>
+        $(document).ready(function(){
+
+          $("a").on('click', function(event) {
+        
+            if (this.hash !== "") {
+
+              event.preventDefault();
+              var hash = this.hash;
+
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 1200, function(){
+        
+                window.location.hash = hash;
+              });
+            } 
+          });
+        });
+    </script>
 
     <div class="footer-me">
         <div class="col-f">
             <span class="bi-flag-fill"></span>
-           <a href="#" class="for-foot">Lapor kesalahan</a>
+           <a href="mailto:admin@riins.xyz" class="for-foot">Lapor kesalahan</a>
            <span class="bi-box-fill"></span>
-           <a href="#" class="for-foot">Tambahkan fitur web</a>
+           <a href="mailto:admin@riins.xyz" class="for-foot">Tambahkan fitur web</a>
            <span class="bi-globe"></span>
-           <a href="#" class="for-foot">Buat custom web</a>
+           <a href="https://www.riins.xyz" class="for-foot">Buat custom web</a>
         </div>
         <div class="col-f">
             <span class="big for-foot">Proposal <span class="little  for-foot"> Fun Cooking</span></span>
