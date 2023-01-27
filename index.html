@@ -105,7 +105,7 @@
             <h6 class="little" style="font-size:13px">Silahkan mengisi <strong class="medium">daftar tamu</strong> ( optional ), atau</h6>
             <h6 class="little" style="font-size:13px">Silahkan klik tombol buka untuk melanjutkan.</h6>
             <br>
-                <form style="font-size:14px;" id="myform">
+                <form action="https://api.staticforms.xyz/submit" style="font-size:14px;" id="myform">
                     <input type="hidden" name="accessKey" value="b42501d3-e1e3-40f2-ad9f-10cb4be35c51"> <!-- Required -->
                     <div class="mb-3">
                         <label class="form-label medium">Nama</label>
@@ -146,7 +146,7 @@
                     $.ajax({ 
                         data:    {data_field: 'value'},
                         type:    'post',
-                        url:     'https://api.staticforms.xyz/submit',
+                        url:     '',
                         success: function(r) {$('#mypopup').removeClass('hidden')},
                         error:   function(r) {alert('error'); console.log(r)}
                     });
