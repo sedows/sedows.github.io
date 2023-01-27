@@ -105,15 +105,19 @@
             <h6 class="little" style="font-size:13px">Silahkan mengisi <strong class="medium">daftar tamu</strong> ( optional ), atau</h6>
             <h6 class="little" style="font-size:13px">Silahkan klik tombol buka untuk melanjutkan.</h6>
             <br>
-                <form style="font-size:14px;">
+                <form action="https://api.staticforms.xyz/submit" method="post" style="font-size:14px;">
+                    <!-- Replace with accesKey sent to your email -->
+        <input type="hidden" name="accessKey" value="b42501d3-e1e3-40f2-ad9f-10cb4be35c51"> <!-- Required -->
+        <!-- If you want replyTo to be set to specific email -->
+        <input type="submit" value="Submit" />
                     <div class="mb-3">
                         <label for="nama" class="form-label medium">Nama</label>
-                        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Bu Rara / Pak Bagus" style="font-size:11px;">
+                        <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Bu Rara / Pak Bagus" style="font-size:11px;">
                       </div>
                       <div class="mb-3">
                         <label for="asal instansi" class="form-label medium">Asal Instansi</label>
                         <br>
-                        <select style="border:none;background-color:#b9edb9;color:darkgreen;padding:5px 10px;border-radius:5px;">
+                        <select name="$myCustomField1" style="border:none;background-color:#b9edb9;color:darkgreen;padding:5px 10px;border-radius:5px;">
                             <option value="No choice">Pilih :</option>
                             <option value="TK">TK</option>
                             <option value="RA">RA</option>
@@ -122,12 +126,12 @@
                             <option value="Umum">Umum</option>
                         </select>
                         <br><br>
-                        <input type="name2" class="form-control" id="exampleFormControlInput2" placeholder="TK Pertiwi Tunjung, Jatilawang" style="font-size:11px">
+                        <input type="text" name="$myCustomField2" class="form-control" id="exampleFormControlInput2" placeholder="TK Pertiwi Tunjung, Jatilawang" style="font-size:11px">
                       </div>
                       <div class="mb-3">
                         <label for="nomor-wa" class="form-label medium">Kontak</label>
-                        <input type="number" class="form-control" placeholder="Whatsapp ( optional )" style="font-size:11px;">
-                        <input type="email" class="form-control" placeholder="Email ( optional )" style="font-size:11px;margin-top:5px;">
+                        <input type="number" name="$myCustomField3" class="form-control" placeholder="Whatsapp ( optional )" style="font-size:11px;">
+                        <input type="email" name="$myCustomField4" class="form-control" placeholder="Email ( optional )" style="font-size:11px;margin-top:5px;">
                       </div>
                       <div class="col">
                         <input type="button submit" value="Buka Proposal" data-bs-dismiss="modal" onclick="playAudio()" style="border:none;background-color:#7ce87c;color:darkgreen;border-radius:5px;padding:5px 10px;margin:auto;text-align:center;">
@@ -136,6 +140,7 @@
                 <br>
                 <br>
             </div>
+
             
         </div>
         </div>
