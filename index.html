@@ -86,6 +86,11 @@
         .index a{text-decoration:none;color:inherit;}
         .index2 a{text-decoration:none;color:inherit;}
         .rad{border-radius:15px;}
+        .hov .hov:hover{animation:hove 0.4s ease;}
+        @keyframes hove {
+            from{background-color:transparent;}
+            to{background-color:lime;}
+        }
         </style>
         <!-- Modal -->
     <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background-color:azure;">
@@ -159,10 +164,10 @@
     </div>
     <div class="main-bg two-side">
         <div class="row-menu">
-            <span class="text-menu" id="navigate2"><span class="bi bi-folder-fill"></span>Dokumentasi</span>
+            <span class="text-menu hov" id="navigate2"><span class="bi bi-folder-fill"></span>Dokumentasi</span>
         </div>
         <div class="row-menu">
-            <span class="text-menu" id="navigate">Index halaman<span class="bi bi-list"></span></span>
+            <span class="text-menu hov" id="navigate">Index halaman<span class="bi bi-list"></span></span>
         </div>
     </div>
     <div class="col">
@@ -170,23 +175,23 @@
     </div>
     <div class="index">
             <span style="margin-left:10px" class="bi4 bi-house-check-fill"></span>
-            <a style="margin-left:10px" href="#outlet">Outlet</a>
+            <a class="hov" style="margin-left:10px" href="#outlet">Outlet</a>
             <span style="margin-left:10px" class="bi4 bi-list-check"></span>
-            <a style="margin-left:10px" href="#daftarmenu">Pilihan Menu</a>
+            <a class="hov" style="margin-left:10px" href="#daftarmenu">Pilihan Menu</a>
             <span style="margin-left:10px" class="bi4 bi-telephone-inbound-fill"></span>
-            <a style="margin-left:10px" href="https://wa.me/6282394945695">Hubungi Kami</a>
+            <a class="hov" style="margin-left:10px" href="https://wa.me/6282394945695">Hubungi Kami</a>
             <br>
-            <span style="margin-left:10px" class="bi2 bi-arrow-bar-right" id="close"></span>
+            <span style="margin-left:10px" class="bi2 bi-arrow-bar-right hov" id="close"></span>
     </div>
     <div class="index2">
         <span style="margin-right:10px" class="bi4 bi-hdd-rack-fill"></span>
-        <a style="margin-right:10px" href="https://drive.google.com/drive/folders/1R9j4bBNCemLa88tWt38h3ZBqqTswPKCS?usp=sharing" target="_blank">Cloud Storage</a>
+        <a class="hov" style="margin-right:10px" href="https://drive.google.com/drive/folders/1R9j4bBNCemLa88tWt38h3ZBqqTswPKCS?usp=sharing" target="_blank">Cloud Storage</a>
         <span style="margin-right:10px" class="bi4 bi-youtube"></span>
-        <a style="margin-right:10px" href="https://www.youtube.com/@ayamgepreksaiwangon2616/videos" target="_blank">Youtube</a>
+        <a class="hov" style="margin-right:10px" href="https://www.youtube.com/@ayamgepreksaiwangon2616/videos" target="_blank">Youtube</a>
         <span style="margin-right:10px" class="bi4 bi-wechat"></span>
-        <a style="margin-right:10px" href="https://www.instagram.com/ayamgepreksai.official" target="_blank">Sosial media</a>
+        <a class="hov" style="margin-right:10px" href="https://www.instagram.com/ayamgepreksai.official" target="_blank">Sosial media</a>
         <br>
-        <span style="margin-right:10px" class="bi2 bi-arrow-bar-left" id="close2"></span>
+        <span style="margin-right:10px" class="bi2 bi-arrow-bar-left hov" id="close2"></span>
     </div>
     <br><br>
     <div class="container-fluid">
@@ -747,9 +752,9 @@
 
     <div class="side-panel">
         <span class="bi-boombox-fill" style="font-size:20px;"></span>
-        <button class="is-playing pausedo" id="playAudio" style="margin-top:0;border-radius:10px;">Stop</button>
+        <button class="is-playing pausedo hov" id="playAudio" style="margin-top:0;border-radius:10px;">Stop</button>
         <span class="bi-box-arrow-up" style="font-size:20px;"></span>
-        <a href="#"><button style="margin-top:0;border:none;border-radius:10px;;background-color:rgb(225, 241, 225);color:darkgreen;">Atas</button></a>
+        <a class="hov" href="#"><button style="margin-top:0;border:none;border-radius:10px;;background-color:rgb(225, 241, 225);color:darkgreen;">Atas</button></a>
     </div>
     
 
