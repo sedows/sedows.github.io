@@ -137,9 +137,10 @@
                         <input type="hidden" name="subject" value="Proposal anda dibuka!" />
                       </div>
                       <div class="col">
-                        <input type="submit" value="Buka Proposal" data-bs-dismiss="modal" onclick="playAudio()" style="border:none;background-color:#7ce87c;color:darkgreen;border-radius:5px;padding:5px 10px;margin:auto;text-align:center;" placeholder="Buka Proposal">
+                        <input id="bcg" type="submite" value="Buka Proposal" data-bs-dismiss="modal" onclick="playAudio()" style="border:none;background-color:#7ce87c;color:darkgreen;border-radius:5px;padding:5px 10px;margin:auto;text-align:center;" placeholder="Buka Proposal">
                       </div>
                 </form>
+                                               
                 <br>
                 <br>
             </div>
@@ -544,6 +545,14 @@
             </div>
         </div>
     </div>
+    <script> 
+
+        $(document).ready(function () { 
+            $("#bcg").click(function () { 
+                alert("An error has occured, cant send guess form"); 
+            }); 
+        }); 
+    </script>
     <div class="table3 text-center">
         <div class="col">
             <div class="th">
